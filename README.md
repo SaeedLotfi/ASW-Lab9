@@ -1,6 +1,6 @@
 # Lab 9 – JWT Security for ADS Dental Surgery API
 
-This repo upgrades your Lab 7 API with **token-based authentication** (JWT) and **role-based authorization** using Spring Security 6 (Boot 3.x).
+This repo upgrades your Lab 7 API with **token-based authentication** (JWT) and **role-based authorization** using Spring Security 6.
 
 ## What's included
 - `/api/v1/auth/register` – create a user (defaults to role `ROLE_RECEPTION` unless `role` provided as `MANAGER`/`RECEPTION`).
@@ -45,10 +45,3 @@ H2 console at `http://localhost:8080/h2-console` (JDBC URL: `jdbc:h2:mem:adsdb`)
    curl -X DELETE http://localhost:8080/api/v1/patients/1 -H "Authorization: Bearer $TOKEN"
    # HTTP 403
    ```
-
-## Notes
-- Update `security.jwt.secret` in `application.yml` for your project.
-- If your existing controllers use create/update/delete, the HTTP method–based access rules will guard them. For finer-grained control, add `@PreAuthorize` on methods (requires `@EnableMethodSecurity`).
-
----
-**Submission**: push this project to GitHub and submit the repo URL.
